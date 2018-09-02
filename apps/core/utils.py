@@ -15,6 +15,7 @@ def make_plot():
     return script, div
 
 def make_ajax_plot():
+
     source = AjaxDataSource(data_url='http://localhost:9000/data/',
                             polling_interval=2000, mode="append")
 

@@ -8,6 +8,7 @@ import json
 from django.http import JsonResponse
 import numpy as np
 x = 0
+step = 0
 
 def show_dashboard(request):
 
@@ -21,6 +22,17 @@ def show_dashboard(request):
 
 @csrf_exempt
 def data(request):
+    global step
+
+    if step == 12:
+        step = 0
+
+
+    # print(step)
+    
+    # main = map(curdoc(), 'cmems', int(step)) 
+
+
     global x
     x += 1
     y = np.sin(x)
@@ -30,4 +42,5 @@ def data(request):
         "y": y
     }
 
+    step += 1
     return JsonResponse(data)
