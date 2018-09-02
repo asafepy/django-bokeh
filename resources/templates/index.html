@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <link href="http://cdn.pydata.org/bokeh/release/bokeh-0.12.0.min.css" rel="stylesheet" type="text/css">
+        <link href="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.0.min.css" rel="stylesheet" type="text/css">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://cdn.pydata.org/bokeh/release/bokeh-0.12.0.min.js"></script>
+        <script src="https://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.0.min.js"></script>
+
+
+    </head>
+    <body>
+
+            
+        {% for plot in plots %}
+            {% for part in plot %}
+                {{part | safe}}
+            {% endfor %}
+        {% endfor %}
+
+        
+        {{ bokeh_script|safe }}
+    </body>
+</html>
