@@ -7,6 +7,7 @@ from django.views.decorators.csrf import csrf_exempt
 import json 
 from django.http import JsonResponse
 import numpy as np
+
 x = 0
 step = 0
 
@@ -17,7 +18,7 @@ def show_dashboard(request):
     plots.append(make_ajax_plot())
     
 
-    return render(request, 'index.html', {'plots':plots})
+    return render(request, 'dashboard/index.html', {'plots':plots})
 
 
 @csrf_exempt
